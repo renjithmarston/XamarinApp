@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             x:Class="XamarinApp.Views.BarcodeScannerPage"
+             NavigationPage.HasBackButton="False"
+              Title="{Binding Title}">
+    
+    <Grid>
+        <!--<Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <zxing:ZXingScannerView x:Name="zxing" 
+                                VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" />
+        <zxing:ZXingDefaultOverlay TopText="Hold your phone up to the barcode" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+                                   BottomText="Scanning will happen automatically"/>
+       
+        <Grid Grid.Row="2" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label x:Name="lblResult" Grid.Row="0" Grid.Column="0"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"/>
+            <Button Text="Search" BackgroundColor="YellowGreen" Grid.Row="1" Grid.Column="0" FontSize="18" Command="{Binding SearchClick}" />
+        </Grid>
+        <!--     <Label Text="OrderId" Grid.Row="0" Grid.Column="0" FontSize="14" />
+            <Entry x:Name="lblResult" Grid.Row="0" Grid.Column="0"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"/>
+            <Button Text="Search" BackgroundColor="YellowGreen" Grid.Row="0" Grid.Column="1" FontSize="10" />
+            <Label Text="User Name" Grid.Row="1" Grid.Column="0" FontSize="12" />
+            <Entry x:Name="lblResult2" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+            <Label Text="User Name" Grid.Row="2" Grid.Column="0" FontSize="12" />
+            <Entry x:Name="lblResult3" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>
+        </Grid>-->
+       
+    </Grid>
+    
+    <!--<ContentPage.Content>
+        
+        <StackLayout>
+            <zxing:ZXingScannerView x:Name="zxing" VerticalOptions="FillAndExpand"/>
+            --><!--<Label Text="Barcode Scanner"
+                VerticalOptions="CenterAndExpand"  
+                HorizontalOptions="CenterAndExpand" />-->
+            <!--<zxing:ZXingScannerView x:Name="zxing" VerticalOptions="FillAndExpand"/>--><!--
+            <Label x:Name="lblresult" Text="" />
+        </StackLayout>
+    </ContentPage.Content>-->
+</ContentPage>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:vm="clr-namespace:XamarinApp.ViewModels"
+             NavigationPage.HasBackButton="False"
+             x:Class="XamarinApp.Views.OrderPage">
+    <ContentPage.BindingContext>
+        <vm:OrderViewModels />
+    </ContentPage.BindingContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Label Text="OrderId" Grid.Row="0" Grid.Column="0" FontSize="14" />
+        <Entry x:Name="lblResult" Text="{Binding OrderId, Mode=TwoWay}" Grid.Row="0" Grid.Column="0"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"/>
+        <Button Text="Search" BackgroundColor="YellowGreen" Grid.Row="0" Grid.Column="1" FontSize="10" Command="{Binding OrderCommand}" />
+        <Label Text="Firstname" Grid.Row="1" Grid.Column="0" FontSize="12" />
+        <Entry x:Name="txtFirstName"  Text="{Binding FirstName, Mode=TwoWay}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <Label Text="Surname" Grid.Row="2" Grid.Column="0" FontSize="12" />
+        <Entry x:Name="txtSurname" Text="{Binding Surname}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <Label Text="Email" Grid.Row="3" Grid.Column="0" FontSize="12" />
+        <Entry x:Name="txtEmail" Text="{Binding Email}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <Label Text="Event Id" Grid.Row="4" Grid.Column="0" FontSize="12" />
+        <Entry x:Name="txtEventId" Text="{Binding EventId}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <Button Text="Search" BackgroundColor="YellowGreen" Grid.Row="5" Grid.Column="0"  Grid.ColumnSpan="2" FontSize="10" Command="{Binding ClickBackCommand}" />
+    </Grid>
+    <!--<ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>-->
+</ContentPage>
